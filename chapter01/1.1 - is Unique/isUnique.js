@@ -1,10 +1,10 @@
 const isUnique = (unique) => {
-  const count = [];
+  const count = {};
   for (let i = 0; i < unique.length; i += 1) {
-    if (count.includes(unique[i])) {
+    if (Object.prototype.hasOwnProperty.call(count, unique[i])) {
       return false;
     }
-    count.push(unique[i]);
+    count[unique[i]] = 'true';
   }
   return true;
 };
