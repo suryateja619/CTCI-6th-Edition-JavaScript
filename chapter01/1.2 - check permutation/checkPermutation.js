@@ -1,4 +1,9 @@
 const checkPermutation = (originalString, givenString) => {
+  const originalStringLen = originalString.length;
+  const givenStringLen = givenString.length;
+  if (originalStringLen === 0 || originalStringLen !== givenStringLen) {
+    return false;
+  }
   const characters = {};
   for (let i = 0; i < originalString.length; i += 1) {
     const stringPos = originalString.charAt(i);
@@ -15,6 +20,7 @@ const checkPermutation = (originalString, givenString) => {
 };
 
 // Test Cases
-console.log(checkPermutation('apple', 'apple'));
-console.log(checkPermutation('at&t', 't-mobile'));
-console.log(checkPermutation('verrri-$&()!@zzoooon', 'verrri-$&()!@zzoooon'));
+console.log(checkPermutation('', 'abc')); // False
+console.log(checkPermutation('apple', 'apple')); // True
+console.log(checkPermutation('at&t', 't-mobile')); // False
+console.log(checkPermutation('verrri-$&()!@zzoooon', 'verrri-$&()!@zzoooon')); // True
